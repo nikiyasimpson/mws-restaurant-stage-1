@@ -1,4 +1,4 @@
-var staticCacheName = 'mws-rest-review-static-v4';
+/*var staticCacheName = 'mws-rest-review-static-v4';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -45,4 +45,4 @@ self.addEventListener('message', function(event) {
   if (event.data.action === 'skipWaiting') {
     self.skipWaiting();
   }
-});
+});*/
