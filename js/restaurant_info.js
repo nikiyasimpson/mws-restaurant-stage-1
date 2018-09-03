@@ -141,9 +141,18 @@ createReviewHTML = (review) => {
   date.innerHTML = review.date;
   li.appendChild(date);
 
-  const rating = document.createElement('h4');
-  rating.innerHTML = `Rating: ${review.rating}`;
-  li.appendChild(rating);
+  const stars = document.createElement('ul');
+  //rating.innerHTML = `Rating: ${review.rating}`;
+  stars.className = 'stars';
+  li.appendChild(stars);
+
+  //let stars = document.getElementsByClassName('stars');
+
+  for (var i = 0; i < review.rating; i++ ){
+    var starLi = document.createElement('li');
+    starLi.innerHTML= "<i class='fa fa-star'></i>";
+    stars.appendChild(starLi);
+}
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
@@ -176,4 +185,14 @@ getParameterByName = (name, url) => {
   if (!results[2])
     return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+function reviewStars(noReviews){
+    let stars = document.getElementsByClassName('stars');
+
+    for (var i = 0; i < noReviews; i++ ){
+      var li = document.createElement('li');
+      li.innerHTML("<i class='fa fa-star'></i>");
+      stars.appendChild(li);
+  }
 }
