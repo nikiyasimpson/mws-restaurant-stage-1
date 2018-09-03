@@ -136,6 +136,7 @@ createReviewHTML = (review) => {
   const name = document.createElement('h3');
   name.innerHTML = review.name;
   li.appendChild(name);
+  li.tabIndex = '4';
 
   const date = document.createElement('h4');
   date.innerHTML = review.date;
@@ -146,7 +147,7 @@ createReviewHTML = (review) => {
   stars.className = 'stars';
   li.appendChild(stars);
 
-  //let stars = document.getElementsByClassName('stars');
+  //Add stars to reviews based on rating
 
   for (var i = 0; i < review.rating; i++ ){
     var starLi = document.createElement('li');
@@ -185,14 +186,4 @@ getParameterByName = (name, url) => {
   if (!results[2])
     return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-
-function reviewStars(noReviews){
-    let stars = document.getElementsByClassName('stars');
-
-    for (var i = 0; i < noReviews; i++ ){
-      var li = document.createElement('li');
-      li.innerHTML("<i class='fa fa-star'></i>");
-      stars.appendChild(li);
-  }
 }
