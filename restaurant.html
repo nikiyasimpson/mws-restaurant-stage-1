@@ -20,8 +20,8 @@
     <nav>
         <h1><a href="/" tabindex="-1">Restaurant Reviews</a></h1>
         <!-- Beginning breadcrumb -->
-        <ul id="breadcrumb" >
-          <li><a href="/" tabindex="0">Home</a></li>
+        <ul id="breadcrumb" tabindex="0">
+          <li><a href="/">Home</a></li>
         </ul>
         <!-- End breadcrumb -->
     </nav>
@@ -34,22 +34,22 @@
   <main id="maincontent">
     <h1 id="restaurant-name"></h1>
     <!-- Beginning restaurant -->
-    <section tabindex="1" id="restaurant-container">
+    <section tabindex="0" id="restaurant-container" aria-label="Restaurant Information">
 
       <img id="restaurant-img">
-      <p id="restaurant-cuisine"></p>
-      <p id="restaurant-address"></p>
-      <table id="restaurant-hours"></table>
+      <p id="restaurant-cuisine" aria-label="Type of Cuisine"></p>
+      <p id="restaurant-address" aria-label="Restaurant Address"></p>
+      <table id="restaurant-hours" aria-label="Restaurant Hours"></table>
     </section>
     <!-- end restaurant -->
     <!-- Beginning map -->
-    <section tabindex="2" id="map-container">
-      <div id="map" role="application" aria-hidden="true"></div>
+    <section id="map-container">
+      <div id="map" tabindex="0" role="application" aria-hidden="true" aria-label="Restaurant on Map"></div>
     </section>
     <!-- End map -->
     <!-- Beginning reviews -->
-    <section id="reviews-container" tabindex="3">
-      <ul id="reviews-list" tabindex="4"></ul>
+    <section id="reviews-container" tabindex="0">
+      <ul id="reviews-list" tabindex="0" aria-label="Reviews of Restaurant"></ul>
     </section>
     <!-- End reviews -->
   </main>

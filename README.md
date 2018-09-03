@@ -43,10 +43,18 @@ Written by Nikiya Simpson
 
 This project includes the following libraries
 
-* Bootstrap : [https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css](https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css)
+* Bootstrap Fonts for Stars: [https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css](https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css)
+
 * Google Fonts: [https://fonts.googleapis.com/css?family=Fontdiner+Swanky|Playfair+Display:200](https://fonts.googleapis.com/css?family=Fontdiner+Swanky|Playfair+Display:200)
 
-This repository uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://www.mapbox.com/). You need to replace `<your MAPBOX API KEY HERE>` with a token from [Mapbox](https://www.mapbox.com/). Mapbox is free to use, and does not require any payment information. 
+* Mapbox:
+This repository uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://www.mapbox.com/). You need to replace `<your MAPBOX API KEY HERE>` with a token from [Mapbox](https://www.mapbox.com/). Mapbox is free to use, and does not require any payment information.
+
+* Cross Browser Normalize CSS:
+Normalize.css as a node packaged [module](https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css)
+
+
+Great [Introduction to Service Workers and Caching](https://www.youtube.com/watch?v=ksXwaWHCW6k&t=1811s) used for assistance with this project.
 
 ### Note about ES6
 

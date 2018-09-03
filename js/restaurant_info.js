@@ -33,6 +33,8 @@ initMap = () => {
       DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
     }
   });
+
+    document.querySelector('#map').tabIndex = '-1';
 }
 
 /**
@@ -136,7 +138,7 @@ createReviewHTML = (review) => {
   const name = document.createElement('h3');
   name.innerHTML = review.name;
   li.appendChild(name);
-  li.tabIndex = '4';
+  //li.tabIndex = '1';
 
   const date = document.createElement('h4');
   date.innerHTML = review.date;

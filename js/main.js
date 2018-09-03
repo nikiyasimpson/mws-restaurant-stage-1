@@ -43,9 +43,11 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
   const select = document.getElementById('neighborhoods-select');
   neighborhoods.forEach(neighborhood => {
     const option = document.createElement('option');
+
     option.innerHTML = neighborhood;
     option.value = neighborhood;
     select.append(option);
+    option.setAttribute('aria-checked','false');
   });
 };
 
@@ -74,6 +76,8 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
     option.innerHTML = cuisine;
     option.value = cuisine;
     select.append(option);
+    option.setAttribute('aria-checked','false');
+
   });
 };
 
@@ -96,12 +100,15 @@ initMap = () => {
   }).addTo(newMap);
 
   updateRestaurants();
+  document.querySelector('#map').tabIndex = '-1';
 };
 
 /**
  * Update page and map for current restaurants.
  */
 updateRestaurants = () => {
+
+
   const cSelect = document.getElementById('cuisines-select');
   const nSelect = document.getElementById('neighborhoods-select');
 
@@ -110,6 +117,10 @@ updateRestaurants = () => {
 
   const cuisine = cSelect[cIndex].value;
   const neighborhood = nSelect[nIndex].value;
+
+  cSelect[cIndex].setAttribute('aria-checked','true');
+  nSelect[nIndex].setAttribute('aria-checked','true');
+
 
   DBHelper.fetchRestaurantByCuisineAndNeighborhood(cuisine, neighborhood, (error, restaurants) => {
     if (error) { // Got an error!
@@ -176,8 +187,8 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
-  //more.tabIndex = '3';
   li.append(more);
+  more.setAttribute('aria-label', `View Details Of ${restaurant.name}`)
 
   return li;
 };
