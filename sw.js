@@ -3,13 +3,14 @@ const staticCacheName = 'mws-rest-review-static-v1';
 
 //list of all pages to put into cache
 const cacheAssets = [
-  '../index.html',
-  '../restaurant.html',
-  '/css/styles.css',
-  '/js/main.js',
-  '/js/dbhelper.js',
-  '/js/restaurant_info.js',
-  '/data/restaurants.json'
+  '/',
+  'index.html',
+  'restaurant.html',
+  'css/styles.css',
+  'js/main.js',
+  'js/dbhelper.js',
+  'js/restaurant_info.js',
+  'data/restaurants.json'
 ]
 
 //Call install
@@ -20,7 +21,7 @@ self.addEventListener('install', (e) => {
     .open(staticCacheName)
     .then(cache => {
       console.log('Service Worker: Caching files');
-      cache.addAll(cacheAssets);
+      return cache.addAll(cacheAssets);
     })
     .then(() => self.skipWaiting())
   );
@@ -44,8 +45,8 @@ self.addEventListener('activate', (e) => {
   );
 });
 
-//call fetch event 
+//call fetch event
 self.addEventListener('fetch', e => {
   console.log('Service Worker: Fetching');
-  e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
+  e.respondWith(fetch(e.request).catch(() => caches.match(e.request,{ignoreSearch:true})));
 });

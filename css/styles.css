@@ -175,7 +175,6 @@ nav h1 a {
   display: block;
   margin: 0;
   max-width: 100%;
-  min-height: 248px;
   min-width: 100%;
 }
 #restaurants-list li h1 {
@@ -217,16 +216,14 @@ nav h1 a {
 	display:flex;
 	flex-direction: column;
 	width:100%;
-	/*grid-template-rows: : repeat(3,1fr);*/
 }
 
 .inside #map-container {
 	height:400px;
-	padding:10px;
+	/*padding:10px;*/
 }
 .inside #map {
 	height:400px;
-
   background-color: #ccc;
 	position:absolute;
 }
@@ -245,7 +242,8 @@ nav h1 a {
 	text-align:center;
 }
 #restaurant-img {
-	width: 90%;
+	width: 100%;
+	height: auto;
 }
 #restaurant-address {
   font-size: 12pt;
@@ -261,16 +259,18 @@ nav h1 a {
   padding: 2px 0;
   text-align: center;
   text-transform: uppercase;
-	width: 90%;
+	width: 100%;
 }
 #restaurant-container, #reviews-container {
-  border-bottom: 1px solid #d9d9d9;
-  border-top: 1px solid #fff;
-  padding: 10px;
+  /*border-bottom: 1px solid #d9d9d9;
+  border-top: 1px solid #fff;*/
+  /*padding: 10px;*/
 }
+
 #restaurant-container {
-  padding: 10px;
+	margin-bottom: 10px;
 }
+
 #reviews-container h2 {
   color: #0C4164;
   font-size: 24pt;
@@ -297,22 +297,20 @@ nav h1 a {
   font-weight: 200;
 }
 
-
-
 #reviews-list {
-  margin: 0;
-  padding: 0;
+  margin-left:auto;
+	margin-right:auto;
+	padding-left:0;
 }
 #reviews-list li {
   background-color: #fff;
     border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
-  margin: 0 0 30px;
+  margin-bottom: 20px;
   overflow: hidden;
   padding: 0 20px 20px;
   position: relative;
-  width: 85%;
 }
 #reviews-list li p {
   margin: 0 0 10px;
@@ -343,6 +341,7 @@ nav h1 a {
 
 	.inside #map-container {
 		width: 100%;
+
 	}
 
 	#restaurant-container {
@@ -381,21 +380,26 @@ nav h1 a {
 	}
 
 	.inside #map {
-		width: 40%;
+		width: 45%;
+		height: 700px;
 	}
 
 	.inside #map-container {
-		width: 40%;
+		width: 45%;
+		height: 700px;
+		margin-right:auto;
+		margin-left:20px;
 	}
 
 	#restaurant-container {
-		width:40%;
+		width:45%;
+		margin-left:auto;
 	}
 
 
 
 #reviews-container {
-	width:60%;
+	width:80%;
 	margin-left: auto;
 	margin-right:auto;
 }
